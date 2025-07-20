@@ -1,11 +1,15 @@
-import React from 'react';
+'use client'
 
-const Dashboard = () => {
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/utils/rtk/store';
+
+const DashboardPage = () => {
+    const profile = useSelector((state: RootState) => state.profile)
+
     return (
-        <>
-            <h1 className='text-3xl font-semibold'>Добро пожаловать, Перепечкин Владислав Николаевич</h1>
-        </>
+        <h1 className='text-3xl font-semibold'>Добро пожаловать, {profile?.full_name}</h1>
     );
 };
 
-export default Dashboard;
+export default DashboardPage;

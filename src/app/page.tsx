@@ -1,9 +1,12 @@
+import LoginForm from '@/components/LoginForm';
+import RegisterForm from '@/components/RegisterForm';
 import React from 'react';
 
 const Home = () => {
     return (
         <section>
-            <h1>Login/Register Page</h1>
+            <RegisterForm />
+            <LoginForm />
         </section>
     );
 };

@@ -1,4 +1,6 @@
+import AuthGuard from "@/components/AuthGuard";
 import Sidebar from "@/components/Sidebar";
+import ReduxProvider from "@/utils/rtk/Provider";
 
 export default function GroupLayout({
     children,
@@ -6,11 +8,13 @@ export default function GroupLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <>
-            <Sidebar />
-            <section className='w-full px-10 pt-20'>
-                {children}
-            </section>
-        </>
+        <ReduxProvider>
+            <AuthGuard>
+                <Sidebar />
+                <section className='w-full px-10 pt-20'>
+                    {children}
+                </section>
+            </AuthGuard>
+        </ReduxProvider>
     );
 }
