@@ -1,15 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-
+import { useSelector } from 'react-redux';
+import { RootState } from '@/utils/rtk/store';
 import { House, BookOpenText, Settings, CircleUserRound } from 'lucide-react';
 import Modal from './Modal';
 
 const Sidebar = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const profile = useSelector((state: RootState) => state.profile)
     const pathname = usePathname();
 
     const links = [
@@ -37,7 +38,7 @@ const Sidebar = () => {
                     <div className='bg-[#f6f6f6] p-5 rounded-lg flex items-start gap-4'>
                         <CircleUserRound color="#ffa503" strokeWidth={2} height={50} width={100} />
                         <div className='flex flex-col'>
-                            <div>Перепечкин Владислав Николаевич</div>
+                            <div>{profile?.full_name}</div>
                             <span className='text-[#969696]'>Ученик</span>
                         </div>
                     </div>
