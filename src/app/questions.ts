@@ -1,4 +1,12 @@
-export const questions = [
+export interface Question {
+    id: number;
+    text: string;
+    image?: string;
+    options: { id: string; text: string }[]
+    correctOption: string;
+}
+
+export const questions: Question[] = [
     {
         id: 1,
         text: 'Какое количество пересечений проезжих частей на этом перекрестке?',
