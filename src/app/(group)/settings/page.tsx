@@ -27,10 +27,6 @@ const SettingsPage = () => {
             avatarUrl = uploadRes.secure_url
         }
 
-        if (!file) {
-            avatarUrl = null
-        }
-
         const { error } = await supabase
             .from('profiles')
             .update({
