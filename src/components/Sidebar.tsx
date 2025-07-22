@@ -20,7 +20,7 @@ const Sidebar = () => {
     ];
 
     return (
-        <aside className='flex flex-col px-8 py-4 left-0 top-0 max-w-[380px] border-dashed border-r-1 min-h-screen'>
+        <aside className='flex flex-col px-8 py-4 left-0 top-0 min-w-[380px] max-w-[380px] border-dashed border-r-1 min-h-screen'>
 
             <div className='flex flex-col justify-between h-full flex-grow'>
 
@@ -35,8 +35,18 @@ const Sidebar = () => {
                         />
                     </div>
 
-                    <div className='bg-[#f6f6f6] p-5 rounded-lg flex items-start gap-4'>
-                        <CircleUserRound color="#ffa503" strokeWidth={2} height={50} width={100} />
+                    <div className='bg-[#f6f6f6] p-5 rounded-lg flex items-start gap-4 w-[315px]'>
+                        {profile.full_name && profile.avatar_url ? (
+                            <Image
+                                src={profile.avatar_url}
+                                alt={profile.full_name}
+                                width={70}
+                                height={70}
+                                className='rounded-lg'
+                            />
+                        ) : (
+                            <CircleUserRound color="#ffa503" strokeWidth={2} height={50} width={100} />
+                        )}
                         <div className='flex flex-col'>
                             <div>{profile?.full_name}</div>
                             <span className='text-[#969696]'>Ученик</span>
