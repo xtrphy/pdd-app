@@ -51,7 +51,7 @@ const SettingsPage = () => {
                 <div className='flex items-start gap-5'>
                     <div className='flex flex-col gap-5 max-w-[50%] min-w-[50%]'>
                         <SettingsInput label={"Email"} htmlFor={"email"} value={email} onChange={setEmail} disabled={true} />
-                        <AvatarInput avatarFile={file} setAvatarFile={setFile} />
+                        <AvatarInput setAvatarFile={setFile} />
                     </div>
                     <SettingsInput label={"ФИО"} htmlFor={"text"} value={fullName} onChange={setFullName} />
                 </div>
