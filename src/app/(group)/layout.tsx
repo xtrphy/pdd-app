@@ -11,7 +11,7 @@ export default function GroupLayout({
         <ReduxProvider>
             <AuthGuard>
                 <Sidebar />
-                <section className='w-full px-10 pt-20'>
+                <section className='w-full h-screen px-10 pt-20'>
                     {children}
                 </section>
             </AuthGuard>
