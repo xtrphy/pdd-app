@@ -22,9 +22,9 @@ export default function RootLayout({
             <body
                 className={`${IgraSans.className} antialiased`}
             >
-                    <main className="flex">
-                        {children}
-                    </main>
+                <main className="bg-[#f6f6f6] flex justify-center items-center min-h-screen">
+                    {children}
+                </main>
             </body>
         </html>
     );

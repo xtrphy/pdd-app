@@ -46,10 +46,21 @@ const SettingsPage = () => {
             <form onSubmit={handleSubmit} className='flex flex-col gap-5 p-6 shadow-lg rounded-lg'>
                 <div className='flex items-start gap-5'>
                     <div className='flex flex-col gap-5 max-w-[50%] min-w-[50%]'>
-                        <SettingsInput label={"Email"} htmlFor={"email"} value={email} onChange={setEmail} disabled={true} />
+                        <SettingsInput
+                            label={"Email"}
+                            htmlFor={"email"}
+                            value={email}
+                            onChange={setEmail}
+                            disabled={true}
+                        />
                         <AvatarInput setAvatarFile={setFile} />
                     </div>
-                    <SettingsInput label={"ФИО"} htmlFor={"text"} value={fullName} onChange={setFullName} />
+                    <SettingsInput
+                        label={"ФИО"}
+                        htmlFor={"text"}
+                        value={fullName}
+                        onChange={setFullName}
+                    />
                 </div>
                 <hr />
                 <button className='ml-[80%] w-[20%] bg-orange-400 hover:bg-orange-300 text-white text-lg rounded-4xl py-4 cursor-pointer transition-colors duration-200'>Сохранить изменения</button>
