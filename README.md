@@ -13,8 +13,10 @@ Screenshots are temporarily unavailable
 
 - **Traffic rules** application
 - Start the test, answer **40 questions** and find out how well you know the **traffic rules**
+- **Check your answers** after the test and find out the mistakes.
 - Beautiful UI created with **shadcn** library
-- Change your profile settings including: Full name and profile picture
+- Change your profile settings including: **full name and profile picture**
+- **Track your progress** using charts and tables
 
 
 ## Tech Stack
