@@ -10,10 +10,14 @@ export default function GroupLayout({
     return (
         <ReduxProvider>
             <AuthGuard>
-                <Sidebar />
-                <section className='w-full h-screen px-10 pt-20'>
-                    {children}
-                </section>
+                <div className="flex min-h-screen w-full">
+                    <div className="ml-[380px] w-full bg-white">
+                        <Sidebar />
+                        <section className='flex-1 px-13 pt-20 overflow-y-auto'>
+                            {children}
+                        </section>
+                    </div>
+                </div>
             </AuthGuard>
         </ReduxProvider>
     );
