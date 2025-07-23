@@ -20,7 +20,7 @@ const Sidebar = () => {
     ];
 
     return (
-        <aside className='flex flex-col px-8 py-4 left-0 top-0 min-w-[380px] max-w-[380px] border-dashed border-r-1 min-h-screen'>
+        <aside className='flex flex-col px-8 py-4 fixed left-0 top-0 min-w-[380px] max-w-[380px] border-dashed border-r h-screen bg-white'>
 
             <div className='flex flex-col justify-between h-full flex-grow'>
 
