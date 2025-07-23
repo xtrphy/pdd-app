@@ -4,7 +4,7 @@ import React from 'react';
 import { BreadcrumbWithDropdown } from '@/components/Breadcrumb';
 import RegisterForm from '@/components/RegisterForm';
 
-const LoginForm = () => {
+const RegisterPage = () => {
     return (
         <div className='flex flex-col gap-3'>
             <BreadcrumbWithDropdown />
@@ -13,4 +13,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default RegisterPage;
