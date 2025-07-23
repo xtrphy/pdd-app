@@ -25,15 +25,15 @@ const Sidebar = () => {
             <div className='flex flex-col justify-between h-full flex-grow'>
 
                 <div className='flex flex-col gap-6'>
-                    <div className='flex justify-center items-center h-20 text-4xl'>
+                    <Link href='/dashboard' className='flex justify-center items-center h-20 text-4xl transition-transform duration-300 hover:scale-107 w-fit mx-auto my-0'>
                         <Image
                             src='/logo.webp'
                             alt='Logo'
-                            width={70}
-                            height={70}
+                            width={100}
+                            height={100}
                             className='rounded-lg'
                         />
-                    </div>
+                    </Link>
 
                     <div className='bg-[#f6f6f6] p-5 rounded-lg flex items-start gap-4 w-[315px]'>
                         {profile.full_name && profile.avatar_url ? (
