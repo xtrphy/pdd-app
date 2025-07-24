@@ -26,7 +26,7 @@ const AuthGuard = ({ children }: { children: React.ReactNode }) => {
 
             const { data: profile, error } = await supabase
                 .from('profiles')
-                .select('*')
+                .select('id, full_name, avatar_url, attempts(*)')
                 .eq('id', user.id)
                 .single()
 
@@ -37,6 +37,7 @@ const AuthGuard = ({ children }: { children: React.ReactNode }) => {
                         full_name: profile.full_name,
                         email: user.email ?? '',
                         avatar_url: profile.avatar_url,
+                        attempts: profile.attempts,
                     })
                 )
             }
