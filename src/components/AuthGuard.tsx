@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { supabase } from '@/utils/supabaseClient';
 import { useDispatch } from 'react-redux';
 import { setProfile } from '@/utils/rtk/reducers/profileSlice';
+import Spinner from './Spinner';
 
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
     const [loading, setLoading] = useState(true);
@@ -48,7 +49,7 @@ const AuthGuard = ({ children }: { children: React.ReactNode }) => {
         checkAuth()
     }, [dispatch, router])
 
-    if (loading) return <div>Загрузка...</div>
+    if (loading) return <Spinner />
 
     return (
         <>

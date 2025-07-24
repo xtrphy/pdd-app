@@ -5,6 +5,7 @@ import { GraduationCap, ChevronLeft, ChevronRight, Dot } from 'lucide-react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/utils/rtk/store';
 import { formatDate } from '@/utils/formatDate';
+import { TooltipComponent } from './Tooltip';
 
 // const examResults = [
 //     { id: 1, type: 'Экзамен', date: '20.07.2025 11:05', passed: false, correct: 1, wrong: 39, total: 40 },
@@ -38,7 +39,10 @@ const Table = () => {
 
     return (
         <div className='border shadow-lg rounded-3xl mb-10'>
-            <h3 className='text-2xl p-5 pb-6'>Результаты тестирования</h3>
+            <h3 className='flex items-center gap-3 text-2xl p-5 pb-6'>
+                Результаты тестирования
+                <TooltipComponent text={'История тестов, которые вы прошли'} />
+            </h3>
             <table className='min-w-full text-left'>
                 <thead className='bg-gray-100 font-medium text-gray-500'>
                     <tr>
