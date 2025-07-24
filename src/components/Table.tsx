@@ -49,7 +49,13 @@ const Table = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {paginatedData.map((attempt) => {
+                    {paginatedData.length === 0 ? (
+                        <tr>
+                            <td colSpan={4} className='text-center py-10 text-gray-500 text-xl'>
+                                Пройдите первый тест, чтобы увидеть результаты
+                            </td>
+                        </tr>
+                    ) : paginatedData.map((attempt) => {
                         const isPassed = attempt.correct_answers >= 35 ? true : false
                         const { date, time } = formatDate(attempt.created_at);
 
