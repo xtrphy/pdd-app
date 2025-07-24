@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface Attempt {
+export interface Attempt {
     id: string;
     profile_id: string;
     created_at: string;
