@@ -7,6 +7,7 @@ import { Attempt } from '@/utils/rtk/reducers/profileSlice';
 import { filterLast7Days } from '@/utils/lastSevenDays';
 import { formatDate } from '@/utils/formatDate';
 import { TooltipComponent } from './Tooltip';
+import { TooltipItem } from 'chart.js';
 
 const Chart = ({ attempts }: { attempts: Attempt[] }) => {
     const recentAttempts = filterLast7Days(attempts)
@@ -93,7 +94,7 @@ const Chart = ({ attempts }: { attempts: Attempt[] }) => {
                 },
                 callbacks: {
                     title: () => '',
-                    label: (tooltipItem) => tooltipItem.formattedValue,
+                    label: (tooltipItem: TooltipItem<'line'>) => tooltipItem.formattedValue,
                 },
                 padding: 10,
             },
