@@ -13,7 +13,7 @@ export default function GroupLayout({
                 <div className="flex min-h-screen w-full">
                     <div className="ml-[380px] w-full bg-white">
                         <Sidebar />
-                        <section className='flex-1 px-13 pt-20 overflow-y-auto'>
+                        <section className='flex-1 px-13 pt-20 pb-5 overflow-y-auto'>
                             {children}
                         </section>
                     </div>
