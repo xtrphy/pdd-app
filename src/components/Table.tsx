@@ -2,33 +2,13 @@
 
 import React, { useState } from 'react';
 import { GraduationCap, ChevronLeft, ChevronRight, Dot } from 'lucide-react';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/utils/rtk/store';
 import { formatDate } from '@/utils/formatDate';
 import { TooltipComponent } from './Tooltip';
-
-// const examResults = [
-//     { id: 1, type: 'Экзамен', date: '20.07.2025 11:05', passed: false, correct: 1, wrong: 39, total: 40 },
-//     { id: 2, type: 'Экзамен', date: '19.07.2025 19:28', passed: false, correct: 5, wrong: 35, total: 40 },
-//     { id: 3, type: 'Экзамен', date: '19.07.2025 18:40', passed: true, correct: 36, wrong: 4, total: 40 },
-//     { id: 4, type: 'Экзамен', date: '18.07.2025 12:15', passed: true, correct: 38, wrong: 2, total: 40 },
-//     { id: 5, type: 'Экзамен', date: '18.07.2025 10:00', passed: true, correct: 37, wrong: 3, total: 40 },
-//     { id: 6, type: 'Экзамен', date: '17.07.2025 16:30', passed: false, correct: 30, wrong: 10, total: 40 },
-//     { id: 7, type: 'Экзамен', date: '17.07.2025 15:00', passed: true, correct: 35, wrong: 5, total: 40 },
-//     { id: 8, type: 'Экзамен', date: '17.07.2025 13:40', passed: true, correct: 40, wrong: 0, total: 40 },
-//     { id: 9, type: 'Экзамен', date: '16.07.2025 19:20', passed: false, correct: 12, wrong: 28, total: 40 },
-//     { id: 10, type: 'Экзамен', date: '16.07.2025 17:50', passed: false, correct: 20, wrong: 20, total: 40 },
-//     { id: 11, type: 'Экзамен', date: '15.07.2025 14:15', passed: true, correct: 39, wrong: 1, total: 40 },
-//     { id: 12, type: 'Экзамен', date: '15.07.2025 13:30', passed: false, correct: 28, wrong: 12, total: 40 },
-//     { id: 13, type: 'Экзамен', date: '15.07.2025 10:45', passed: true, correct: 37, wrong: 3, total: 40 },
-//     { id: 14, type: 'Экзамен', date: '14.07.2025 18:10', passed: false, correct: 7, wrong: 33, total: 40 },
-//     { id: 15, type: 'Экзамен', date: '14.07.2025 15:55', passed: true, correct: 36, wrong: 4, total: 40 },
-// ];
+import { Attempt } from '@/utils/rtk/reducers/profileSlice';
 
 const PAGE_SIZE = 10;
 
-const Table = () => {
-    const { attempts } = useSelector((state: RootState) => state.profile)
+const Table = ({ attempts }: { attempts: Attempt[] }) => {
     const [currentPage, setCurrentPage] = useState(1);
 
     const totalPages = Math.ceil(attempts.length / PAGE_SIZE);
@@ -38,7 +18,7 @@ const Table = () => {
     );
 
     return (
-        <div className='border shadow-lg rounded-3xl mb-10'>
+        <div className='w-full border shadow-lg rounded-3xl mb-10'>
             <h3 className='flex items-center gap-3 text-2xl p-5 pb-6'>
                 Результаты тестирования
                 <TooltipComponent text={'История тестов, которые вы прошли'} />
