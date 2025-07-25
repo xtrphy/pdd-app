@@ -29,7 +29,7 @@ const ExamModal = () => {
     const handleStartExam = async () => {
         if (!profile) return;
 
-        const { data, error } = await supabase.from('attempts').insert({
+        await supabase.from('attempts').insert({
             profile_id: profile.id,
             correct_answers: 0,
             incorrect_answers: 40,
