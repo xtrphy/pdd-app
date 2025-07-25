@@ -21,7 +21,7 @@ const LinearProgressCard = () => {
                     <span className='text-[#5e5e5e]'>Успешные попытки</span>
                     <span className='text-[#026b9c]'>{passedExams.length}/{attempts.length}</span>
                 </div>
-                <LinearProgress value={passedExams.length} max={attempts.length} />
+                <LinearProgress value={passedExams.length} max={attempts.length === 0 ? 1 : attempts.length} />
             </div>
         </div>
     );
