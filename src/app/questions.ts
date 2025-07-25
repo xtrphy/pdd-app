@@ -243,7 +243,7 @@ export const questions: Question[] = [
     },
     {
         id: 22,
-        text: 'Разрешается ли Вам осуществить перевозка груза таким образом?',
+        text: 'Разрешается ли Вам осуществить перевозку груза таким образом?',
         image: 'https://kulager-auto.kz/storage/questions/video/1foMllp5bnB9vT72KVn9Fj81mUBfO16YgN5jD2bk.mp4',
         options: [
             { id: 'A', text: 'Разрешается' },

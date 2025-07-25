@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/utils/rtk/store';
 import { House, BookOpenText, Settings, CircleUserRound } from 'lucide-react';
-import Modal from './Modal';
+import LogoutModal from './LogoutModal';
 
 const Sidebar = () => {
     const profile = useSelector((state: RootState) => state.profile)
@@ -73,7 +73,7 @@ const Sidebar = () => {
                     </nav>
                 </div>
 
-                <Modal />
+                <LogoutModal />
 
             </div>
 

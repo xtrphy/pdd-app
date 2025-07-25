@@ -4,7 +4,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/utils/rtk/store';
 import Table from '@/components/Table';
-import ProgressCard from '@/components/ProgressCard';
+import ProgressCard from '@/components/CircularProgress/CircularProgressCard';
 import Chart from '@/components/Chart';
 
 const DashboardPage = () => {
