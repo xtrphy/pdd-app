@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateProfile } from '@/utils/rtk/reducers/profileSlice';
 import { RootState } from '@/utils/rtk/store';
@@ -17,7 +17,7 @@ interface Question {
     options: Option[];
 }
 
-interface Option {
+export interface Option {
     id: string;
     text: string;
 }
@@ -28,6 +28,7 @@ const ExamPage = () => {
     const [answers, setAnswers] = useState<Record<number, string>>({});
     const [correctness, setCorrectness] = useState<Record<number, boolean>>({});
     const [submitted, setSubmitted] = useState(false);
+    const [autoSubmitPending, setAutoSubmitPending] = useState(false);
     const profile = useSelector((state: RootState) => state.profile);
     const dispatch = useDispatch();
     const router = useRouter();
@@ -69,15 +70,14 @@ const ExamPage = () => {
         setAnswers(prev => ({ ...prev, [questionIndex]: selectedOptionId }));
         setCorrectness(prev => ({ ...prev, [questionIndex]: isCorrect }));
 
-
         if (current < questions.length - 1) {
             setCurrent(current + 1)
         } else {
-            handleSubmit();
+            setAutoSubmitPending(true);
         }
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = useCallback(async () => {
         setSubmitted(true);
 
         const correctCount = questions.reduce((acc, q, i) => {
@@ -131,7 +131,17 @@ const ExamPage = () => {
         dispatch(updateProfile({ attempts: newAttempts }))
 
         router.push('/dashboard');
-    };
+    }, [answers, dispatch, profile.id, questions, router]);
+
+    useEffect(() => {
+        if (autoSubmitPending) {
+            const allAnswered = Object.values(answers).filter(a => a !== '').length === questions.length;
+            if (allAnswered) {
+                handleSubmit();
+                setAutoSubmitPending(false);
+            }
+        }
+    }, [answers, autoSubmitPending, handleSubmit, questions.length]);
 
     const question = questions[current];
     const isVideo = (url: string) => url.endsWith('.mp4');
