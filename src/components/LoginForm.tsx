@@ -33,7 +33,7 @@ const LoginForm = () => {
             <div className='w-[50%] flex flex-col'>
                 <div className='mb-7'>
                     <h2 className='text-[40px] font-black mb-3'>Авторизация</h2>
-                    <p className='text-[#676767]'>Авторизуйтесь для входа в личный кабинет</p>
+                    <p className='text-[#676767]'>Авторизуйтесь для входа в личный кабинет.</p>
                 </div>
                 <div className='space-y-7 flex gap-7'>
                     <DefaultInput
