@@ -1,11 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+export interface Answer {
+    correct: string;
+    selected: string;
+    questionId: number;
+}
+
 export interface Attempt {
     id: string;
     profile_id: string;
     created_at: string;
     correct_answers: number;
     incorrect_answers: number;
+    answers: Answer[];
     total: number;
     type: string;
 }
