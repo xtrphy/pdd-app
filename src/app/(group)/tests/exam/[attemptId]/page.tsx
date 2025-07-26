@@ -155,7 +155,7 @@ const ExamPage = () => {
                     <div
                         key={question.id}
                         className={`
-                            w-[45px] h-[45px] flex items-center justify-center rounded-md 
+                            w-[45px] h-[45px] flex items-center justify-center rounded-md
                             ${correctness[index] === true ? 'border-1 border-[#007b55] bg-[#b8e4cd] text-[#007b55]' : ''}
                             ${correctness[index] === false ? 'border-1 border-[#b71d18] bg-[#f8cec1] text-[#b71d18]' : ''}
                             ${current === index ? 'bg-[#f3a93d] text-white' : ''}
