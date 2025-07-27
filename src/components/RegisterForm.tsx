@@ -51,13 +51,16 @@ const RegisterForm = () => {
     }
 
     return (
-        <form onSubmit={handleRegister} className='bg-white flex items-center justify-between p-6 w-[1290px] h-[650px] rounded-lg'>
-            <div className='w-[50%] flex flex-col gap-5'>
+        <form
+            onSubmit={handleRegister}
+            className='bg-white flex flex-col lg:flex-row items-center justify-between p-6 w-full max-w-[1290px] min-h-[650px] mx-auto rounded-lg lg:gap-6 xl:min-w-[1200px]'
+        >
+            <div className='w-full lg:w-1/2 flex flex-col gap-5'>
                 <div className='mb-7'>
-                    <h2 className='text-[40px] font-black mb-3'>Создание аккаунта</h2>
+                    <h2 className='text-3xl sm:text-4xl font-black mb-3'>Создание аккаунта</h2>
                     <hr />
                 </div>
-                <div className='grid grid-cols-2 grid-rows-2 gap-7'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6'>
                     <DefaultInput
                         type='text'
                         placeholder='Имя'
@@ -83,23 +86,27 @@ const RegisterForm = () => {
                         onChange={setPassword}
                     />
                 </div>
-                {error && <p className='text-red-500'>{error}</p>}
-                {success && <p className='text-green-500'>{success}</p>}
-                <div className='mt-5 flex justify-end gap-3'>
-                    <button type='submit' className='bg-[#f2a940] hover:bg-orange-400 transition-colors duration-200 cursor-pointer text-white text-lg py-3 px-7 rounded-4xl font-medium'>
+                {error && <p className='text-red-500 mt-3'>{error}</p>}
+                {success && <p className='text-green-500 tm-3'>{success}</p>}
+                <div className='mt-6 flex flex-col sm:flex-row sm:justify-end gap-4'>
+                    <button
+                        type='submit'
+                        className='bg-[#f2a940] hover:bg-orange-400 transition-colors duration-200 cursor-pointer text-white text-lg py-3 px-7 rounded-4xl font-medium'
+                    >
                         Создать аккаунт
                     </button>
                 </div>
                 <hr />
                 <div className='text-[#676767]'>Уже есть аккаунт? <Link href='/login' className='text-[#f2a940] hover:text-orange-400 transition-colors duration-200 ml-2'>Войти</Link></div>
             </div>
-            <div className='flex flex-col justify-center items-center gap-10 bg-[#f2a940] text-white text-4xl font-black h-full rounded-xl'>
+            <div className='w-full lg:w-1/2 mt-10 lg:mt-0 flex flex-col justify-center items-center gap-6 bg-[#f2a940] text-white text-2xl sm:text-3xl font-black p-6 rounded-lg lg:rounded-xl'>
                 Ещё чуть-чуть!
                 <Image
                     src='/car.webp'
                     alt='Car'
                     width={500}
                     height={200}
+                    className='object-contain'
                 />
             </div>
         </form>
