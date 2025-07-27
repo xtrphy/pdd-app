@@ -24,7 +24,6 @@ const AuthGuard = ({ children }: { children: React.ReactNode }) => {
                 return
             }
 
-
             const { data: profile, error } = await supabase
                 .from('profiles')
                 .select('id, full_name, avatar_url, attempts(*)')
