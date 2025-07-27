@@ -9,7 +9,6 @@ import { TooltipComponent } from './Tooltip';
 import { TooltipItem } from 'chart.js';
 
 const Chart = ({ attempts }: { attempts: Attempt[] }) => {
-
     const attemptsWithFormattedDates = attempts.map(attempt => {
         const { date } = formatDate(attempt.created_at)
         return { ...attempt, created_at: date };
