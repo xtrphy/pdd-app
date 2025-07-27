@@ -4,23 +4,19 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import '@/lib/chart';
 import { Attempt } from '@/utils/rtk/reducers/profileSlice';
-import { filterLast7Days } from '@/utils/lastSevenDays';
 import { formatDate } from '@/utils/formatDate';
 import { TooltipComponent } from './Tooltip';
 import { TooltipItem } from 'chart.js';
 
 const Chart = ({ attempts }: { attempts: Attempt[] }) => {
-    const recentAttempts = filterLast7Days(attempts)
-        .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
-
-    const recentAttemptsWithFormattedDates = recentAttempts.map(attempt => {
+    const attemptsWithFormattedDates = attempts.map(attempt => {
         const { date } = formatDate(attempt.created_at)
         return { ...attempt, created_at: date };
     });
 
     const dateMap: Record<string, { correct: number; incorrect: number }> = {};
 
-    for (const attempt of recentAttemptsWithFormattedDates) {
+    for (const attempt of attemptsWithFormattedDates) {
         const date = attempt.created_at;
         if (!dateMap[date]) {
             dateMap[date] = { correct: 0, incorrect: 0 };
@@ -30,8 +26,8 @@ const Chart = ({ attempts }: { attempts: Attempt[] }) => {
     }
 
     const labels = Object.keys(dateMap);
-    const correctData = labels.map(date => dateMap[date].correct)
-    const incorrectData = labels.map(date => dateMap[date].incorrect)
+    const correctData = labels.map(date => dateMap[date].correct);
+    const incorrectData = labels.map(date => dateMap[date].incorrect);
 
     const data = {
         labels,
@@ -113,7 +109,7 @@ const Chart = ({ attempts }: { attempts: Attempt[] }) => {
     return (
         <div className='flex flex-col items-center border shadow-lg rounded-3xl w-full'>
             <h3 className='flex items-center justify-start gap-3 w-full px-5 pt-5 text-2xl'>
-                Статистика за последние 7 дней
+                Статистика за всё время
                 <TooltipComponent text={'Статистика правильных и неправильных ответов в тестах'} />
             </h3>
             <div className='w-[85%] pb-6'>
