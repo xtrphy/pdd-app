@@ -25,20 +25,22 @@ export default function GroupLayout({
                         '>
                             {children}
                         </section>
-                        <footer className="w-full flex justify-between items-center text-[#5e5e5e] bg-[#f5f6f8] px-4 py-4 text-xs flex-col gap-2 sm:px-6 sm:py-5 sm:text-sm sm:flex-row sm:gap-0 lg:px-13
-                        ">
-                            <span>УЧЕБНЫЙ ПРОЕКТ</span>
+                        <footer className="w-full flex flex-col items-center gap-2 px-4 py-4 text-xs text-[#5e5e5e] bg-[#f5f6f8] 
+    sm:flex-row sm:justify-between sm:text-sm sm:px-6 sm:py-5 lg:px-12">
+                            <span className="text-center sm:text-left">УЧЕБНЫЙ ПРОЕКТ</span>
                             <span className="text-center sm:text-right">
                                 Вдохновлено{' '}
                                 <a
                                     href="https://kulager-auto.kz"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-black underline hover:no-underline"
                                 >
                                     Сетью автошкол Кулагер
                                 </a>
                             </span>
                         </footer>
+
                     </div>
                 </div>
             </AuthGuard>

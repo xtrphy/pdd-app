@@ -149,13 +149,13 @@ const ExamPage = () => {
     if (!question) return <Spinner />
 
     return (
-        <div className='flex flex-col justify-start'>
-            <div className='flex flex-wrap gap-3 bg-[#f6f6f6] text-[#212529] p-3 rounded-2xl select-none mb-6'>
+        <div className='flex flex-col px-4 sm:px-6 lg:px-10 py-6 gap-6'>
+            <div className='flex flex-wrap gap-2 sm:gap-3 bg-[#f6f6f6] text-[#212529] p-3 rounded-2xl select-none'>
                 {questions.map((question, index) => (
                     <div
                         key={question.id}
                         className={`
-                            w-[45px] h-[45px] flex items-center justify-center rounded-md
+                            w-10 h-10 sm:w-11 sm:h-11 text-sm sm:text-base flex items-center justify-center rounded-md transition-colors duration-200
                             ${correctness[index] === true ? 'border-1 border-[#007b55] bg-[#b8e4cd] text-[#007b55]' : ''}
                             ${correctness[index] === false ? 'border-1 border-[#b71d18] bg-[#f8cec1] text-[#b71d18]' : ''}
                             ${current === index ? 'bg-[#f3a93d] text-white' : ''}
@@ -165,17 +165,18 @@ const ExamPage = () => {
                     </div>
                 ))}
             </div>
-            <div className='flex flex-col border-1 shadow-lg rounded-3xl p-10'>
-                <span className='text-[#a3a3a3] text-lg'>Вопрос {current + 1}</span>
-                <span className='mt-2.5 text-2xl'>{question.text}</span>
-                <div className='flex justify-start gap-8 mt-7'>
 
+            <div className='flex flex-col border-1 border-gray-200 shadow-md rounded-3xl p-5 sm:p-8 gap-5 bg-white'>
+                <span className='text-[#a3a3a3] text-base sm:text-lg'>Вопрос {current + 1}</span>
+                <span className='text-xl sm:text-2xl'>{question.text}</span>
+
+                <div className='flex flex-col lg:flex-row gap-6'>
                     {question.image && (
                         isVideo(question.image) ? (
                             <video
                                 controls
                                 autoPlay
-                                className='w-[60%] h-auto rounded-lg'
+                                className='w-full lg:w-[60%] max-h-[400px] rounded-lg'
                                 src={question.image}
                             />
                         ) : (
@@ -184,29 +185,31 @@ const ExamPage = () => {
                                 alt={question.text}
                                 width={700}
                                 height={400}
-                                className='w-[60%] h-auto rounded-lg object-contain'
+                                className='w-full lg:w-[60%] max-h-[400px] rounded-lg object-contain'
                             />
                         )
                     )}
 
-                    <div className='flex flex-col gap-4 w-[40%]'>
+                    <div className='flex flex-col gap-4 w-full lg:w-[40%]'>
                         {question.options.map((option) => (
                             <button
                                 key={option.id}
                                 onClick={() => handleSelect(current, option.id)}
-                                className='group flex items-center text-left gap-7 p-5 text-xl bg-[#f6f6f6] border-1 border-transparent hover:text-black hover:border-orange-400 rounded-lg cursor-pointer'
+                                className='group flex items-center text-left gap-4 p-4 sm:p-5 text-base sm:text-xl bg-[#f6f6f6] border-1 border-transparent hover:border-orange-400 rounded-lg cursor-pointer'
                             >
-                                <span className='text-[#a3a3a3] text-lg group-hover:text-black'>{option.id}.</span>
-                                {option.text}
+                                <span className='text-[#a3a3a3] text-lg group-hover:text-black'>
+                                    {option.id}.
+                                </span>
+                                <span>{option.text}</span>
                             </button>
                         ))}
                     </div>
-
                 </div>
             </div>
+
             <button
                 onClick={handleSubmit}
-                className='ml-auto mt-7 w-fit rounded-4xl px-8 py-4 border-1 border-[#f2a93f] text-[#f2a93f] cursor-pointer'
+                className='self-end bg-white ml-auto mt-7 w-fit rounded-4xl px-8 py-4 text-base sm:text-lg border-1 border-[#f2a93f] text-[#f2a93f] cursor-pointer'
             >
                 Завершить экзамен
             </button>

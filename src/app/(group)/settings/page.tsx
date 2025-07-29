@@ -41,11 +41,15 @@ const SettingsPage = () => {
     }
 
     return (
-        <div className='flex flex-col gap-3 justify-start'>
-            <h1 className='text-3xl font-semibold'>Настройки</h1>
-            <form onSubmit={handleSubmit} className='flex flex-col gap-5 p-6 shadow-lg rounded-lg'>
-                <div className='flex items-start gap-5'>
-                    <div className='flex flex-col gap-5 max-w-[50%] min-w-[50%]'>
+        <div className='flex flex-col gap-6 px-4 pb-6 sm:px-4 lg:px-8'>
+            <h1 className='text-2xl sm:text-3xl font-semibold text-gray-800'>Настройки</h1>
+
+            <form
+                onSubmit={handleSubmit}
+                className='flex flex-col items-center gap-6 bg-white p-6 sm:p-8 shadow-md rounded-2xl w-full'
+            >
+                <div className='flex flex-col lg:flex-row gap-6 w-full'>
+                    <div className='flex flex-col gap-5 flex-1'>
                         <SettingsInput
                             label={"Email"}
                             htmlFor={"email"}
@@ -55,15 +59,25 @@ const SettingsPage = () => {
                         />
                         <AvatarInput setAvatarFile={setFile} />
                     </div>
-                    <SettingsInput
-                        label={"ФИО"}
-                        htmlFor={"text"}
-                        value={fullName}
-                        onChange={setFullName}
-                    />
+
+                    <div className='flex-1'>
+                        <SettingsInput
+                            label={"ФИО"}
+                            htmlFor={"text"}
+                            value={fullName}
+                            onChange={setFullName}
+                        />
+                    </div>
                 </div>
-                <hr />
-                <button className='ml-[80%] w-[20%] bg-orange-400 hover:bg-orange-300 text-white text-lg rounded-4xl py-4 cursor-pointer transition-colors duration-200'>Сохранить изменения</button>
+
+                <hr className='border-gray-200' />
+
+                <button
+                    className='bg-orange-400 hover:bg-orange-300 text-white text-base sm:text-lg rounded-xl px-6 py-3 transition-colors duration-200 cursor-pointer'
+                >
+                    Сохранить изменения
+                </button>
+
             </form>
         </div>
     );
