@@ -26,7 +26,7 @@ const ProgressCard = () => {
     const correctAnswers = Array.from(uniqueAnswersMap.values());
 
     return (
-        <div className='bg-white border shadow-lg rounded-2xl sm:rounded-3xl flex items-center justify-between gap-4 sm:gap-6 p-4 sm:px-6 sm:py-5 lg:px-7 lg:py-6 w-full max-w-xs sm:max-w-md'>
+        <div className='bg-white border shadow-lg rounded-2xl sm:rounded-3xl flex items-center justify-between gap-4 sm:gap-6 p-4 sm:px-6 sm:py-5 lg:px-7 lg:py-6 w-full max-w-md sm:max-w-[475px]'>
             <div className='flex flex-col justify-center sm:justify-around min-w-0 gap-2 sm:gap-3'>
                 <span className='flex items-start sm:items-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg lg:text-xl leading-tight'>
                     <span className="flex-shrink-0">Пройдено вопросов</span>
@@ -44,7 +44,7 @@ const ProgressCard = () => {
             <CircularProgress
                 value={correctAnswers.length}
                 max={40}
-                className="w-18 h-18 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
+                className="flex items-center justify-center w-18 h-18 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
             />
         </div>
     );
