@@ -72,7 +72,7 @@ export default function CircularProgress({
                     fontSize={16}
                     className={`
                         fill-orange-400 font-bold transition-all duration-300
-                        ${!size ? 'text-xs sm:text-sm md:text-base lg:text-lg' : ''}
+                        ${!size ? 'text-sm sm:text-lg' : ''}
                         `}
                     style={size ? { fontSize: `${fontSize}px` } : {}}
                 >
