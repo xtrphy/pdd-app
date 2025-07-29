@@ -80,15 +80,15 @@ const ExamModal = () => {
                 </ul>
 
                 <AlertDialogFooter className="flex flex-col items-center sm:flex-row gap-3 sm:gap-5 mt-auto">
-                    <AlertDialogCancel className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-base rounded-full p-6 transition cursor-pointer">
-                        Отмена
-                    </AlertDialogCancel>
                     <AlertDialogAction
                         onClick={handleStartExam}
                         className="bg-[#f2a940] hover:bg-[#f6bf6f] text-white text-base font-medium rounded-full px-6 py-6 transition cursor-pointer"
                     >
                         Начать экзамен
                     </AlertDialogAction>
+                    <AlertDialogCancel className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-base rounded-full p-6 transition cursor-pointer">
+                        Отмена
+                    </AlertDialogCancel>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
