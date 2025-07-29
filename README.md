@@ -6,14 +6,25 @@ An application for testing knowledge of traffic rules. Run a test of 40 question
 
 ## Screenshots
 
-Screenshots are temporarily unavailable
+![Play now section screenshot](https://github.com/user-attachments/assets/86299065-83c8-4b0f-aed9-03bd7d257302)
 
+![Play now section screenshot](https://github.com/user-attachments/assets/a3e41f2c-e74d-46cb-9f5f-510f6ae500a1)
+
+![Play now section screenshot](https://github.com/user-attachments/assets/0bb64a6b-d7f6-4184-82e4-6c6e0ae17e0a)
+
+![Play now section screenshot](https://github.com/user-attachments/assets/72af0074-b70a-4c2f-8f5f-4aa3a1a9b3b0)
+
+![Play now section screenshot](https://github.com/user-attachments/assets/0e891184-1c64-4cbd-9ffa-f9e16a83d902)
+
+![Play now section screenshot](https://github.com/user-attachments/assets/6f8e6e56-4baf-403e-93e9-4faf15f67332)
+
+![Play now section screenshot](https://github.com/user-attachments/assets/bc6663b6-9224-4e00-a7f1-6b32ce08f0ab)
 
 ## Features
 
 - **Traffic rules** application
 - Start the test, answer **40 questions** and find out how well you know the **traffic rules**
-- **Check your answers** after the test and find out the mistakes.
+- **Check your answers** after the test.
 - Beautiful UI created with **shadcn** library
 - Change your profile settings including: **full name and profile picture**
 - **Track your progress** using charts and tables
