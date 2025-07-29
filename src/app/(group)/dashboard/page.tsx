@@ -12,7 +12,7 @@ const DashboardPage = () => {
 
     return (
         <div className='flex flex-col items-start'>
-            <h1 className='text-3xl font-semibold mb-7'>Добро пожаловать, {full_name}</h1>
+            <h1 className='text-xl lg:text-3xl font-semibold mb-7'>Добро пожаловать, <br /> {full_name}</h1>
             <ProgressCard />
             <div className='flex flex-col items-center mt-7 w-full'>
                 <Table attempts={attempts} />

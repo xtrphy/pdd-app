@@ -55,35 +55,37 @@ const ExamModal = () => {
 
     return (
         <AlertDialog>
-            <AlertDialogTrigger className="bg-white border-1 shadow-lg hover:shadow-xl rounded-3xl gap-6 px-7 py-6 w-[630px] cursor-pointer mb-5">
+            <AlertDialogTrigger className="bg-white border-1 shadow-md hover:shadow-xl rounded-3xl gap-6 px-5 py-6 w-full max-w-xl cursor-pointer">
                 <LinearProgressCard />
             </AlertDialogTrigger>
-            <AlertDialogContent className="rounded-3xl flex min-w-4xl min-h-3xl p-10 flex-col">
-                <AlertDialogHeader className="flex flex-row justify-between items-center">
-                    <AlertDialogTitle className="text-4xl w-fit">Условия экзамена</AlertDialogTitle>
-                    <AlertDialogCancel className="hover:bg-transparent border-0 shadow-none [&_svg:not([class*='size-'])]:size-auto cursor-pointer text-gray-400">
-                        <X size={28} />
+            <AlertDialogContent className="rounded-3xl w-full max-w-3xl p-6 sm:p-10 flex flex-col">
+                <AlertDialogHeader className="flex flex-row justify-between items-start mb-4">
+                    <AlertDialogTitle className="text-2xl sm:text-3xl font-bold text-gray-800">
+                        Условия экзамена
+                    </AlertDialogTitle>
+                    <AlertDialogCancel className="hover:bg-transparent border-0 shadow-none cursor-pointer text-gray-400 p-1">
+                        <X />
                     </AlertDialogCancel>
                 </AlertDialogHeader>
 
-                <AlertDialogDescription className="text-gray-500 text-lg mb-2">
+                <AlertDialogDescription className="text-gray-600 text-base sm:text-lg mb-6">
                     Перед началом убедитесь, что вы готовы пройти экзамен. Ознакомьтесь с правилами ниже.
                 </AlertDialogDescription>
 
-                <div>
-                    <ul className="flex flex-col gap-2 text-xl p-5 list-disc">
-                        <li>40 вопросов.</li>
-                        <li>Проходной балл 35 и выше.</li>
-                        <li>При достижении 6 неправильных ответов экзамен завершится автоматически.</li>
-                        <li>Переход к следующему вопросу происходит автоматически.</li>
-                    </ul>
-                </div>
-                <hr className="mb-5" />
-                <AlertDialogFooter>
-                    <AlertDialogCancel className="bg-transparent hover:bg-gray-200 text-gray-500 hover:text-gray-500 text-xl transition-colors duration-200 cursor-pointer rounded-4xl px-12 py-7">Отмена</AlertDialogCancel>
+                <ul className="list-disc text-base sm:text-lg text-gray-700 px-5 space-y-2 mb-6">
+                    <li>40 вопросов.</li>
+                    <li>Проходной балл 35 и выше.</li>
+                    <li>При достижении 6 неправильных ответов экзамен завершится автоматически.</li>
+                    <li>Переход к следующему вопросу происходит автоматически.</li>
+                </ul>
+
+                <AlertDialogFooter className="flex flex-col items-center sm:flex-row gap-3 sm:gap-5 mt-auto">
+                    <AlertDialogCancel className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-base rounded-full p-6 transition cursor-pointer">
+                        Отмена
+                    </AlertDialogCancel>
                     <AlertDialogAction
-                        className="bg-[#f2a940] text-white text-xl hover:bg-[#f6bf6f] transition-colors duration-200 cursor-pointer rounded-4xl px-12 py-7"
                         onClick={handleStartExam}
+                        className="bg-[#f2a940] hover:bg-[#f6bf6f] text-white text-base font-medium rounded-full px-6 py-6 transition cursor-pointer"
                     >
                         Начать экзамен
                     </AlertDialogAction>
