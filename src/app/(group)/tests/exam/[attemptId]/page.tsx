@@ -176,6 +176,7 @@ const ExamPage = () => {
                             <video
                                 controls
                                 autoPlay
+                                playsInline
                                 className='w-full lg:w-[60%] max-h-[400px] rounded-lg'
                                 src={question.image}
                             />
