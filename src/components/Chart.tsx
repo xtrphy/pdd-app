@@ -4,7 +4,7 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import '@/lib/chart';
 import { Attempt } from '@/utils/rtk/reducers/profileSlice';
-import { formatDate } from '@/utils/formatDate';
+import { formatDate } from '@/utils/formatDate/formatDate';
 import { TooltipComponent } from './Tooltip';
 import { TooltipItem } from 'chart.js';
 

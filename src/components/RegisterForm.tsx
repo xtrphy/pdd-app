@@ -4,7 +4,7 @@ import React from 'react';
 import { useState } from 'react';
 import { supabase } from '@/utils/supabaseClient';
 import Link from 'next/link';
-import { DefaultInput } from './DefaultInput';
+import { DefaultInput } from './DefaultInput/DefaultInput';
 import Image from 'next/image';
 
 const RegisterForm = () => {

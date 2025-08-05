@@ -5,7 +5,7 @@ import { supabase } from '@/utils/supabaseClient';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { DefaultInput } from './DefaultInput';
+import { DefaultInput } from './DefaultInput/DefaultInput';
 
 const LoginForm = () => {
     const [email, setEmail] = useState('')

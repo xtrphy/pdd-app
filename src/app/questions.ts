@@ -445,6 +445,7 @@ export const questions: Question[] = [
             { id: 'B', text: 'Знак II' },
             { id: 'C', text: 'Знак III' },
             { id: 'D', text: 'Знак IV' },
+            { id: 'E', text: 'Знак V' },
         ],
         correctOption: 'C',
     },
