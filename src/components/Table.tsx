@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { GraduationCap, ChevronLeft, ChevronRight, Dot, Trophy, Calendar } from 'lucide-react';
-import { formatDate } from '@/utils/formatDate';
+import { formatDate } from '@/utils/formatDate/formatDate';
 import { TooltipComponent } from './Tooltip';
 import { Attempt } from '@/utils/rtk/reducers/profileSlice';
 

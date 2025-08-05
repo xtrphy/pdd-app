@@ -18,7 +18,7 @@ import { supabase } from "@/utils/supabaseClient";
 import { useSelector } from "react-redux";
 import { RootState } from "@/utils/rtk/store";
 import { questions } from '@/app/questions';
-import { shuffleQuestions } from "@/utils/shuffleQuestions";
+import { shuffleQuestions } from "@/utils/shuffleQuestions/shuffleQuestions";
 
 const shuffledQuestions = shuffleQuestions(questions);
 
