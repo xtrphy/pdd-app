@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { BreadcrumbWithDropdown } from '@/components/Breadcrumb';
-import LoginForm from '@/components/LoginForm';
+import LoginForm from '@/components/LoginForm/LoginForm';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/utils/supabaseClient';
 
