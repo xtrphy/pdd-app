@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/utils/rtk/store';
 import { Answer } from '@/utils/rtk/reducers/profileSlice';
 
-const ProgressCard = () => {
+const CircularProgressCard = () => {
     const { attempts } = useSelector((state: RootState) => state.profile);
 
     const allRightAnswers = attempts.map(attempt => {
@@ -50,4 +50,4 @@ const ProgressCard = () => {
     );
 };
 
-export default ProgressCard;
+export default CircularProgressCard;

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { GraduationCap, ChevronLeft, ChevronRight, Dot, Trophy, Calendar } from 'lucide-react';
 import { formatDate } from '@/utils/formatDate/formatDate';
-import { TooltipComponent } from './Tooltip';
+import { TooltipComponent } from '../Tooltip';
 import { Attempt } from '@/utils/rtk/reducers/profileSlice';
 
 const PAGE_SIZE = 10;
@@ -32,8 +32,8 @@ const Table = ({ attempts }: { attempts: Attempt[] }) => {
                 {paginatedData.length === 0 ? (
                     <div className='text-center py-10 px-4 text-gray-500'>
                         <Trophy className="w-12 h-12 mx-auto mb-3 text-gray-300" />
-                        <p className="text-lg">Пройдите первый тест,</p>
-                        <p className="text-lg">чтобы увидеть результаты</p>
+                        <p className="text-base">Пройдите первый тест,</p>
+                        <p className="text-base">чтобы увидеть результаты</p>
                     </div>
                 ) : (
                     <div className='space-y-3 p-4'>
