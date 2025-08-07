@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ChevronDownIcon, SlashIcon } from "lucide-react"
+import { ChevronDownIcon } from "lucide-react"
 import { usePathname } from "next/navigation"
 import { Dot } from "lucide-react"
 
