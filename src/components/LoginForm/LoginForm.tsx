@@ -5,7 +5,7 @@ import { supabase } from '@/utils/supabaseClient';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { DefaultInput } from './DefaultInput/DefaultInput';
+import { DefaultInput } from '../DefaultInput/DefaultInput';
 
 const LoginForm = () => {
     const [email, setEmail] = useState('')
@@ -56,6 +56,7 @@ const LoginForm = () => {
                 <div className='mt-6 flex flex-col sm:flex-row gap-4'>
                     <button
                         type='submit'
+                        aria-label='Войти'
                         className='bg-[#f2a940] hover:bg-orange-400 transition-colors duration-200 cursor-pointer text-white text-lg py-3 px-7 rounded-4xl font-medium'
                     >
                         Войти

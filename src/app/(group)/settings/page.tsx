@@ -1,6 +1,6 @@
 'use client'
 
-import { SettingsInput } from '@/components/SettingsInput';
+import { SettingsInput } from '@/components/SettingsInput/SettingsInput';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/utils/rtk/store';

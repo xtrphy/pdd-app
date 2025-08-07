@@ -13,7 +13,7 @@ export function SettingsInput({ label, htmlFor, value, onChange, disabled }: Inp
     return (
         <div className="grid w-full items-center gap-2">
             <Label htmlFor={htmlFor} className="text-[#5e5e5e]">{label}</Label>
-            <Input type={htmlFor} id={label} value={value} onChange={e => onChange(e.target.value)} disabled={disabled} className='bg-[#f6f6f6] h-14 text-[16px]' />
+            <Input type={htmlFor} id={htmlFor} value={value} onChange={e => onChange(e.target.value)} disabled={disabled} className='bg-[#f6f6f6] h-14 text-[16px]' />
         </div>
     )
 }
