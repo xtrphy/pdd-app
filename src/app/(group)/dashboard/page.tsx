@@ -1,14 +1,13 @@
 'use client'
 
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/utils/rtk/store';
+import { useAppSelector } from '@/utils/rtk/hooks';
 import Table from '@/components/Table/Table';
 import CircularProgressCard from '@/components/CircularProgress/CircularProgressCard';
 import Chart from '@/components/Chart';
 
 const DashboardPage = () => {
-    const { full_name, attempts } = useSelector((state: RootState) => state.profile)
+    const { full_name, attempts } = useAppSelector(state => state.profile)
 
     return (
         <div className='flex flex-col items-start'>

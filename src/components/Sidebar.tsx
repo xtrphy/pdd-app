@@ -4,14 +4,13 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/utils/rtk/store';
+import { useAppSelector } from '@/utils/rtk/hooks';
 import { House, BookOpenText, Settings, CircleUserRound, X, Menu } from 'lucide-react';
 import LogoutModal from './LogoutModal';
 
 const Sidebar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const profile = useSelector((state: RootState) => state.profile)
+    const profile = useAppSelector(state => state.profile);
     const pathname = usePathname();
 
     const links = [

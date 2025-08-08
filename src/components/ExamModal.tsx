@@ -15,8 +15,7 @@ import LinearProgressCard from "./LinearProgress/LinearProgressCard";
 import { X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/utils/supabaseClient";
-import { useSelector } from "react-redux";
-import { RootState } from "@/utils/rtk/store";
+import { useAppSelector } from "@/utils/rtk/hooks";
 import { questions } from '@/app/questions';
 import { shuffleQuestions } from "@/utils/shuffleQuestions/shuffleQuestions";
 
@@ -24,7 +23,7 @@ const shuffledQuestions = shuffleQuestions(questions);
 
 const ExamModal = () => {
     const router = useRouter()
-    const profile = useSelector((state: RootState) => state.profile);
+    const profile = useAppSelector(state => state.profile);
 
     const handleStartExam = async () => {
         if (!profile) return;

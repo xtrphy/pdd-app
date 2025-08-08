@@ -3,12 +3,11 @@
 import React from 'react';
 import CircularProgress from './CircularProgress';
 import { TooltipComponent } from '../Tooltip';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/utils/rtk/store';
+import { useAppSelector } from '@/utils/rtk/hooks';
 import { Answer } from '@/utils/rtk/reducers/profileSlice';
 
 const CircularProgressCard = () => {
-    const { attempts } = useSelector((state: RootState) => state.profile);
+    const { attempts } = useAppSelector(state => state.profile);
 
     const allRightAnswers = attempts.map(attempt => {
         return attempt.answers.filter(a => a.correct === a.selected);

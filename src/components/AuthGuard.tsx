@@ -4,14 +4,14 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/utils/supabaseClient';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '@/utils/rtk/hooks';
 import { setProfile } from '@/utils/rtk/reducers/profileSlice';
 import Spinner from './Spinner';
 
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
     const [loading, setLoading] = useState(true);
     const router = useRouter()
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         const checkAuth = async () => {
