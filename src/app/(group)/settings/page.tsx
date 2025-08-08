@@ -2,19 +2,18 @@
 
 import { SettingsInput } from '@/components/SettingsInput/SettingsInput';
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/utils/rtk/store';
+import { useAppSelector, useAppDispatch } from '@/utils/rtk/hooks';
 import { AvatarInput } from '@/components/AvatarInput';
 import { updateProfile } from '@/utils/rtk/reducers/profileSlice';
 import { supabase } from '@/utils/supabaseClient';
 import { uploadToCloudinary } from '@/utils/cloudinary';
 
 const SettingsPage = () => {
-    const profile = useSelector((state: RootState) => state.profile)
-    const dispatch = useDispatch()
+    const profile = useAppSelector(state => state.profile);
+    const dispatch = useAppDispatch()
 
     const [fullName, setFullName] = useState(profile.full_name)
-    const [email, setEmail] = useState(profile.email)
+    const [email, setEmail] = useState<string>(profile.email)
     const [file, setFile] = useState<File | null>(null)
 
     const handleSubmit = async (e: React.FormEvent) => {

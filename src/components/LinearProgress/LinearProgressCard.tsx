@@ -1,11 +1,10 @@
 import { Flag } from 'lucide-react';
 import React from 'react';
 import LinearProgress from './LinearProgress';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/utils/rtk/store';
+import { useAppSelector } from '@/utils/rtk/hooks';
 
 const LinearProgressCard = () => {
-    const { attempts } = useSelector((state: RootState) => state.profile);
+    const { attempts } = useAppSelector(state => state.profile);
     const passedExams = attempts.filter(attempt => attempt.correct_answers >= 35);
 
     return (

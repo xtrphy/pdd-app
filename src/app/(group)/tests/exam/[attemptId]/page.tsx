@@ -1,9 +1,8 @@
 'use client'
 
 import React, { useCallback, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '@/utils/rtk/hooks';
 import { updateProfile } from '@/utils/rtk/reducers/profileSlice';
-import { RootState } from '@/utils/rtk/store';
 import { supabase } from '@/utils/supabaseClient';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -24,13 +23,13 @@ export interface Option {
 
 const ExamPage = () => {
     const [questions, setQuestions] = useState<Question[]>([]);
-    const [current, setCurrent] = useState(0);
+    const [current, setCurrent] = useState<number>(0);
     const [answers, setAnswers] = useState<Record<number, string>>({});
     const [correctness, setCorrectness] = useState<Record<number, boolean>>({});
-    const [submitted, setSubmitted] = useState(false);
-    const [autoSubmitPending, setAutoSubmitPending] = useState(false);
-    const profile = useSelector((state: RootState) => state.profile);
-    const dispatch = useDispatch();
+    const [submitted, setSubmitted] = useState<boolean>(false);
+    const [autoSubmitPending, setAutoSubmitPending] = useState<boolean>(false);
+    const profile = useAppSelector(state => state.profile);
+    const dispatch = useAppDispatch();
     const router = useRouter();
 
     useEffect(() => {
