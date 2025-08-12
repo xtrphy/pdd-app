@@ -43,6 +43,8 @@ An application for testing knowledge of traffic rules. Run a test of 40 question
 - **Redux Toolkit** (State manager)
 - **Supabase** (Database)
 - **TypeScript** (Typing and avoiding unexpected errors)
+- **Jest* (Testing library)
+- **React Testing Library** (Testing React components)
 - **Cloudinary** (Store profile pictures)
 - **Tailwind CSS** (Styling)
 - **shadcn/ui** (UI components)
@@ -64,6 +66,11 @@ An application for testing knowledge of traffic rules. Run a test of 40 question
 3. Start the development server:
    ```bash
    npm run dev
+   ```
+
+4. Start tests:
+   ```bash
+   npm run test
    ```
 
 ## Contributing
