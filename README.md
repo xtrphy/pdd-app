@@ -43,7 +43,7 @@ An application for testing knowledge of traffic rules. Run a test of 40 question
 - **Redux Toolkit** (State manager)
 - **Supabase** (Database)
 - **TypeScript** (Typing and avoiding unexpected errors)
-- **Jest* (Testing library)
+- **Jest** (Testing library)
 - **React Testing Library** (Testing React components)
 - **Cloudinary** (Store profile pictures)
 - **Tailwind CSS** (Styling)
